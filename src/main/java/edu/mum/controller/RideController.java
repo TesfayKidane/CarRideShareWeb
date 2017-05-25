@@ -1,5 +1,7 @@
 package edu.mum.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,12 +9,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.mum.domain.Ride;
+import edu.mum.domain.Search;
 import edu.mum.domain.User;
 import edu.mum.service.RideService;
 import edu.mum.service.UserService;
@@ -62,6 +66,12 @@ public class RideController {
 		
 	   	return "redirect:/rides";
 	}
+ 	@RequestMapping(value="/search", method = RequestMethod.POST)
+ 	public String processSearch(Ride search, Model model){
+ 		List<Ride> rides =  rideService.search(search.getRideOriginCity(), search.getRideDestinationCity());
+ 		model.addAttribute("rides", rides);
+ 		return "rides";
+ 	}
 	
    
 }

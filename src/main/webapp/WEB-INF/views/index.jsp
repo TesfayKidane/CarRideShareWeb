@@ -70,22 +70,23 @@
 		<div class="container">
 			<div class="row">
 				<div class="banner-info">
-					<div class="banner-logo text-center">
+					<%-- <div class="banner-logo text-center">
 						<img src="<c:url value="/resource/img/logo.png" />"
 							class="img-responsive">
-					</div>
+					</div> --%>
 					<div class="banner-text text-center">
 						<h1 class="white">Car Ride Sharing Platform</h1>
 						<p>
 							Search rides, share and have enjoyable journey<br>
 						</p>
 
-						<form action="<spring:url value="/search"></spring:url>"
+						<form action="<spring:url value="/rides/search"></spring:url>"
 							method="post" class="form-horizontal">
 
-							<input id="rideOriginCity" type="text" value="Fairfield"
-								class="search-input" style="color: black;" /> <input
-								id="rideDestinationCity" value="Iowa City" type="text"
+							<input name="rideOriginCity" type="text" value="Fairfield"
+								class="search-input" style="color: black;" /> 
+								<input
+								name="rideDestinationCity" value="Iowa City" type="text"
 								class="search-input" style="color: black;" /> </br>
 								 <input
 								type="submit" id="btnAdd" class="btn btn-appoint"

@@ -15,4 +15,6 @@ public interface RideRestService {
 
 	public Ride save(Ride product);
 
+	public List<Ride> search(String rideOriginCity, String rideDestinationCity);
+
 }

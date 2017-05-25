@@ -157,6 +157,8 @@ public class Ride implements Serializable {
 	@Transient
 	private List<String> carImages = new ArrayList<String>();
 
+	@Transient String rideThumbnail = "https://s-media-cache-ak0.pinimg.com/236x/fa/a5/24/faa52466577feeb25cff2f28fe11fa77.jpg";
+	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "CREATED", nullable = true, updatable = false)
 	private Date created = new Date();

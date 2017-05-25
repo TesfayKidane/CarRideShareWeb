@@ -32,4 +32,10 @@ public class RideServiceImpl implements RideService {
 	}
 
 
+	@Override
+	public List<Ride> search(String rideOriginCity, String rideDestinationCity) {
+		return rideRestService.search(rideOriginCity, rideDestinationCity);
+	}
+
+
 }

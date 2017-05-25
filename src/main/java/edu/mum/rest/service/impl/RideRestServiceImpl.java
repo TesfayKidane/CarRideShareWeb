@@ -38,4 +38,10 @@ public class RideRestServiceImpl  implements RideRestService {
  		return null;
 	}
 
+	@Override
+	public List<Ride> search(String rideOriginCity, String rideDestinationCity) {
+		RestTemplate restTemplate = remoteApi.getRestTemplate();
+		return Arrays.asList(restTemplate.exchange("http://localhost:8080/CarRideShareApi/rides/search/"+rideOriginCity+"/"+rideDestinationCity, HttpMethod.GET, remoteApi.getHttpEntity(), Ride[].class).getBody());
+	}
+
 }
