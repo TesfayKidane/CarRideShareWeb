@@ -33,7 +33,7 @@ public class LoginController {
 			return  "login";
  
 		model.addAttribute("user", validCredentials.getUser());
- 		return "redirect:/welcome";
+ 		return "redirect:/index";
 	}
  
 	@RequestMapping(value="/loginfailed", method = RequestMethod.GET)

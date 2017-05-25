@@ -8,8 +8,13 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 @Controller
 public class HomeController {
 
+	
+	@RequestMapping({"/"})
+	public String indexPage(Model model){
+		return "index";
+	}
  
-	@RequestMapping({"/","/welcome"})
+	@RequestMapping({"/welcome"})
 	public String welcome(Model model) {
 		
 		model.addAttribute("greeting", "Welcome to our community, Kimosabe!!");
