@@ -22,8 +22,7 @@ public class LoginController {
 	public String login() {
  		return "login";
 	}
- 
-	
+ 	
 	@RequestMapping(value="/postLogin", method = RequestMethod.POST)
 	public String PostLogin(UserCredentials credentials, Model model) {
 
@@ -33,7 +32,7 @@ public class LoginController {
 			return  "login";
  
 		model.addAttribute("user", validCredentials.getUser());
- 		return "redirect:/index";
+ 		return "redirect:/welcome";
 	}
  
 	@RequestMapping(value="/loginfailed", method = RequestMethod.GET)
@@ -47,6 +46,6 @@ public class LoginController {
 	@RequestMapping(value="/logout", method = RequestMethod.GET)
 	public String logout(Model model, SessionStatus status) {
 		status.setComplete();
- 		return "redirect:/welcome";
+ 		return "redirect:/index";
  	}
 }

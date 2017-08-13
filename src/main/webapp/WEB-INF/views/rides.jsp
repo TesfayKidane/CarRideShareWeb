@@ -45,20 +45,22 @@
 			      <div class="thumbnail"> 
 			      	<img src="<c:url value="/resource/img/rideThumbnail.jpg" />" alt="..." class="team-img">
 			        <div class="caption">
-			          <h4>${ride.rideOriginCity}</h4>
-			          <p>to</p>
-			          <h4>${ride.rideDestinationCity}</h4>
-			          <h5>${ride.availableSeats}</h5>						
-					  <p>${ride.ridePrice}$</p>
-					  <p>${ride.description}</p>
+			          <B>${ride.rideOriginCity}</B>	- 		          
+			          <B>${ride.rideDestinationCity}</B>
+			          <p>Seats : ${ride.availableSeats}</p>						
+					  <p>Price : ${ride.ridePrice}$</p>					 
 			          <ul class="list-inline">
-			            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+			            <li><a
+									href=" <spring:url value="/rides/ride?id=${ride.id}" /> "
+									class="btn btn-primary"> <span
+									class="" /></span> Join
+								</a></li>
 			           <!--  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
 			            <li><a href="#"><i class="fa fa-google-plus"></i></a></li> -->
 			            <li><a
 									href=" <spring:url value="/rides/ride?id=${ride.id}" /> "
 									class="btn btn-primary"> <span
-									class="glyphicon-info-sign glyphicon" /></span> Details
+									class="" /></span> Details
 								</a></li>
 			          </ul>
 			        </div>
@@ -88,55 +90,33 @@
 						<c:choose>
 							<c:when test="${empty user}">
 								<li class="active"><a href="#">Home</a></li>
-								<li class=""><a href="<spring:url value='/rides' />">Rides</a></li>
-								<li class=""><a href="<spring:url value='/login' />">Login</a></li>
+								<li class="active"><a href="<spring:url value='/rides' />" class="btn btn-default">
+										<span class=""></span> Rides
+									</a></li>								
+								<li class="active"><a href="<spring:url value='/login' />" class="btn btn-default">
+										<span class=""></span> Login
+									</a></li>
 							</c:when>
 							<c:otherwise>
 								<li class="active"><a href="#">Home</a></li>
-								<li class=""><a href="<spring:url value='/rides' />">Rides</a></li>
-								<li class=""><a href="<spring:url value='/users' />">Users</a></li>
-								<li class=""><a href="<spring:url value='/logout' />">Logout</a></li>
+								<li class="active"><a href="<spring:url value='/rides' />" class="btn btn-default">
+										<span class=""></span> Rides
+								</a></li>	
+								<li class="active"><a href="<spring:url value='/users' />" class="btn btn-default">
+										<span class=""></span> Users
+								</a></li>							
+								<li class="active"><a href="<spring:url value='/logout' />" class="btn btn-default">
+										<span class=""></span> Logout
+								</a></li>
 							</c:otherwise>
 						</c:choose>
 					</ul>
 				</div>
 			</div>
 		</div>
-		</nav>
-		<div class="container">
-			<div class="row">
-				<div class="banner-info">
-					<%-- <div class="banner-logo text-center">
-						<img src="<c:url value="/resource/img/logo.png" />"
-							class="img-responsive">
-					</div> --%>
-					<div class="banner-text text-center">
-						<h1 class="white">Car Ride Sharing Platform</h1>
-						<p>
-							Search rides, share and have enjoyable journey<br>
-						</p>
-
-						<form action="<spring:url value="/rides/search"></spring:url>"
-							method="post" class="form-horizontal">
-
-							<input name="rideOriginCity" type="text" value="Fairfield"
-								class="search-input" style="color: black;" /> 
-								<input
-								name="rideDestinationCity" value="Iowa City" type="text"
-								class="search-input" style="color: black;" /> </br>
-								 <input
-								type="submit" id="btnAdd" class="btn btn-appoint"
-								value="Search Rides" />
-						</form>
-					</div>
-					<div class="overlay-detail text-center">
-						<a href="#service"><i class="fa fa-angle-down"></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
+		</nav>		
 	</div>
-	</section>
+	
 	<!--footer-->
 	<footer id="footer">
 	<div class="top-footer">

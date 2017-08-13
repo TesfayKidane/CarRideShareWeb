@@ -1,6 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%-- <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%> --%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -52,14 +50,24 @@
 						<c:choose>
 							<c:when test="${empty user}">
 								<li class="active"><a href="#">Home</a></li>
-								<li class=""><a href="<spring:url value='/rides' />">Rides</a></li>
-								<li class=""><a href="<spring:url value='/login' />">Login</a></li>
+								<li class="active"><a href="<spring:url value='/rides' />" class="btn btn-default">
+										<span class=""></span> Rides
+									</a></li>								
+								<li class="active"><a href="<spring:url value='/login' />" class="btn btn-default">
+										<span class=""></span> Login
+									</a></li>
 							</c:when>
 							<c:otherwise>
 								<li class="active"><a href="#">Home</a></li>
-								<li class=""><a href="<spring:url value='/rides' />">Rides</a></li>
-								<li class=""><a href="<spring:url value='/users' />">Users</a></li>
-								<li class=""><a href="<spring:url value='/logout' />">Logout</a></li>
+								<li class="active"><a href="<spring:url value='/rides' />" class="btn btn-default">
+										<span class=""></span> Rides
+								</a></li>	
+								<li class="active"><a href="<spring:url value='/users' />" class="btn btn-default">
+										<span class=""></span> Users
+								</a></li>							
+								<li class="active"><a href="<spring:url value='/logout' />" class="btn btn-default">
+										<span class=""></span> Logout
+								</a></li>
 							</c:otherwise>
 						</c:choose>
 					</ul>
@@ -157,9 +165,9 @@
 	</footer>
 	<!--/ footer-->
 
-	<script src="<c:url value="/resource/js/jquery.min.js" />"></script>
+	<%-- <script src="<c:url value="/resource/js/jquery.min.js" />"></script>
 	<script src="<c:url value="/resource/js/jquery.easing.min.js" />"></script>
 	<script src="<c:url value="/resource/js/bootstrap.min.js" />"></script>
-	<script src="<c:url value="/resource/js/custom.js" />"></script>
+	<script src="<c:url value="/resource/js/custom.js" />"></script> --%>
 </body>
 </html>
